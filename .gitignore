@@ -4,3 +4,4 @@
 *.swo
 a.out
 tags
+test/*
