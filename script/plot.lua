@@ -1,3 +1,6 @@
+#!/Users/hy0kl/local/bin/lua
+
+-- clean screen
 erase_terminal = function()
     return io.write("\27[2J");
 end;
