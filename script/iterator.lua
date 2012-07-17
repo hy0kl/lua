@@ -1,12 +1,11 @@
-debug = {};
+local debug = {};
 debug.prefix = '';
-debug.print_r = function(array, ...)
+debug.indent = '    ';
+debug.print_r = function(array, arg_prefix)
     local prefix = '';
-    local arg_prefix = '';
-    if arg[1] then
-        arg_prefix = arg[1];
+    if arg_prefix then
+        debug.prefix = debug.prefix .. arg_prefix;
     end;
-    debug.prefix = debug.prefix .. arg_prefix;
     prefix = debug.prefix;
 
     if 'table' ~= type(array) then
@@ -16,8 +15,8 @@ debug.print_r = function(array, ...)
 
     for key, value in pairs(array) do
         if 'table' == type(value) then
-            print(prefix .. key .. ' is a table =>');
-            debug.print_r(value, '$$$');
+            print(prefix .. key .. ': is a table =>');
+            debug.print_r(value, debug.indent);
         else
             print(prefix .. key .. ' = ' .. value);
         end;    -- end if
@@ -29,12 +28,13 @@ end;
 t_table = {'one', 'two', 'there',};
 t_array = {'one', 'two', 'there', ['array'] = {['test-1'] = 'QQ', ['test-2'] = 'baidu'}};
 
-print(table.getn);
+--print(table.getn);
+print('------\nLua5.2 table method: ');
 print(table.concat);
-
-for k, v in pairs(t_table) do
-    print(k .. ' = ' .. v)
+for k, v in pairs(table) do
+    print(k, ' = ', v)
 end
+print('End \n------');
 
 debug.print_r('test function...');
 debug.print_r(t_array);
