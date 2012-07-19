@@ -6,7 +6,7 @@
 
 #define BUFF_LEN    1024
 
-// gcc study.c -llua -lm -ldl
+/* gcc lua_ext.c -llua -lm -ldl */
 
 static void print_prompt()
 {
