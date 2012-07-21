@@ -6,8 +6,11 @@
 
 #define BUFF_LEN    1024
 
-/* gcc lua_ext.c -llua -lm -ldl */
+/* gcc *.c -llua -lm -ldl */
 /**
  * lua: _VERSION 5.2
  * */
+
+#define TESTING 1
+#define SEPARATOR "    "
 
