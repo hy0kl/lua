@@ -1,10 +1,10 @@
 -- nginx 中的设置搜索路径
---lua_package_path "/usr/local/lua/lib/lua/5.1/?.lua;;";
---lua_package_cpath "/usr/local/lib/lua/5.1/?.so;;";
+--lua_package_path  "/usr/local/lib/lua/5.1/?.lua;./?.lua;";
+--lua_package_cpath "/usr/local/lib/lua/5.1/?.so;./?.so;";
 
 -- lua 脚本中设置搜索路径
-package.path  = "/home/work/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?.lua;";
-package.cpath = "/home/work/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/?.so;";
+package.path  = "/home/work/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?.lua;./?.lua;";
+package.cpath = "/home/work/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/?.so;./?.so;";
 
 curl = require("luacurl")
 
