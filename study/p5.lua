@@ -39,3 +39,39 @@ end
 
 print(strpos(c_unpack(find)));
 
+-- 变长参数(variable number of arguments)
+local add = function(...)
+    local s = 0;
+    -- 此处用 pairs 和 ipairs 效果一样
+    --for k, v in ipairs({...}) do
+    for k, v in pairs({...}) do
+        s = s + v;
+    end
+
+    return s;
+end
+
+print(add(1, 2, 3, 4));
+
+function fwrite(fmt, ...)
+    return io.write(string.format(fmt, ...));
+end
+fwrite('abc %d\n', 120);
+
+-- select('#', ...) 会返回所有变长参数的总数,其中包括 nil.
+test_args = function(...)
+    for i = 1, select('#', ...) do
+        local arg = select(i, ...); -- 得到第 i 个参数
+        print(arg);
+    end
+end
+test_args(110, 'This is a string', 'hi', {'I am table'}, test_args);
+
+-- 具名实参(named arguments)
+function mv(arg)
+    return os.rename(arg.old, arg.new);
+end
+-- 如果文件存在,会正确重命令
+-- 否则不报错,所以需要关心返回值: nil   tmp.lua: No such file or directory  2
+print(mv({old = 'tmp.lua', new = 'tmp_new.lua'}));
+
