@@ -29,7 +29,8 @@ strpos = string.find;
 find = {'Hello', 'll'};
 print(strpos(unpack(find)));
 
--- 不能声明为 local, 否则报错: attempt to call global 'c_unpack' (a nil value)
+-- 不能在定义时声明为 local, 否则报错: attempt to call global 'c_unpack' (a nil value)
+local c_unpack; -- 前向声明
 c_unpack = function(t, i)
     i = i or 1;
     if t[i] then
