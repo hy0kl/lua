@@ -76,19 +76,3 @@ for word in allwords() do
     print(word);
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
