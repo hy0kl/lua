@@ -3,8 +3,8 @@
 --lua_package_cpath "/usr/local/lib/lua/5.1/?.so;;";
 
 -- lua 脚本中设置搜索路径
-package.path  = "/home/baihe/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?.lua;";
-package.cpath = "/home/baihe/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/?.so;";
+package.path  = "/home/work/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?.lua;";
+package.cpath = "/home/work/local/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/?.so;";
 
 local cjson = require "cjson"
 local cjson2 = cjson.new()
