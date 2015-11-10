@@ -34,6 +34,8 @@ write
 
 -- 在 termianl 下将注释标为蓝色
 -- $ cat curl.lua | lua p21.lua
+-- 按颜色输出无法使用普通的 \e 或者 \033 来进行输出,
+-- 原因是在lua中 \nnn 是按照十进制来解释的,因此改成 \27 就可以了.
 for line in io.lines() do
     if '-' == string.sub(line, 1, 1) then
         --line = '\e[1;34m' .. line;
