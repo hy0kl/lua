@@ -39,7 +39,7 @@ local metals = {};
 setmetatable(metals, {__index = 'v'});
 function setDefaultV2(t, d)
     local mt = metals[d];
-    if mt = nil then
+    if mt == nil then
         mt = {__index = function() return d end};
         metals[d] = mt; -- 备忘录
     end
