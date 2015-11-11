@@ -45,3 +45,30 @@ setmetatable(t2, mt)
 
 t = t1 + t2
 for k, v in pairs(t) do print(v) end
+
+obj_1 = {}
+function obj_1:echo()
+    print("I am obj 001.")
+end
+
+function obj_1:debug()
+    print("obj 001 debug");
+end
+
+obj = {}
+function obj:echo()
+    print("I am obj.")
+end
+
+
+obj:echo();
+
+if type(obj.debug) == "function" then
+    obj:debug();
+else
+    print("没有 debug 方法")
+end
+
+obj = setmetatable(obj, {__index = obj_1});
+obj:echo();
+obj:debug();
