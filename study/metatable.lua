@@ -48,16 +48,16 @@ for k, v in pairs(t) do print(v) end
 
 obj_1 = {}
 function obj_1:echo()
-    print("I am obj 001.")
+    print("I am obj->echo 001.")
 end
 
 function obj_1:debug()
-    print("obj 001 debug");
+    print("obj 001 debug obj_1->debug");
 end
 
 obj = {}
 function obj:echo()
-    print("I am obj.")
+    print("I am obj->echo.")
 end
 
 
@@ -72,3 +72,10 @@ end
 obj = setmetatable(obj, {__index = obj_1});
 obj:echo();
 obj:debug();
+
+function overridden()
+    print("重写了方法.重写的方法签名必须一致...")
+end
+
+obj.echo = overridden;
+obj:echo();
