@@ -27,3 +27,4 @@ m.write('Just hi.\n');
 -- 常见的路径:
 -- ./?.so;/usr/local/lib/lua/5.1/?.so;
 
+-- 经过测试, require 的文件,多次 require 只会被加载一次.
