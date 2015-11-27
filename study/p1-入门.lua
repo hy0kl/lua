@@ -23,4 +23,9 @@ print('Enter a number: \a');
 number = io.read('*number'); -- read an number
 print( number .. ' fact is: ' .. fact(number));
 
+-- lua 里面并不是非0即真,0也是真值.
+if 0 then
+    print("I am 0");
+end
+
 os.exit();
