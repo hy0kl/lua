@@ -1,5 +1,7 @@
 -- table
 
+-- next() 可以有效判定 table 是不是为空
+
 for attr in pairs(table) do
     if 'function' == type(table[attr]) then
         --print(string.format('%s', attr));
